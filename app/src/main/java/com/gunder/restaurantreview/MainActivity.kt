@@ -31,6 +31,14 @@ class MainActivity : AppCompatActivity() {
         binding.rvView.addItemDecoration(itemDecoration)
 
         findRestaurant()
+//        aksi ketika tombol review di kirim
+        binding.btnSend.setOnClickListener { view->
+            postReview(binding.edReview.text.toString())
+        }
+    }
+
+    private fun postReview(review: String) {
+
     }
 
     private fun findRestaurant() {
@@ -52,6 +60,7 @@ class MainActivity : AppCompatActivity() {
                     Log.e(TAG, "onFailure: ${response.message()}")
                 }
             }
+
             override fun onFailure(call: Call<RestaurantResponse>, t: Throwable) {
                 showLoading(false)
                 Log.e(TAG, "onFailure: ${t.message}")
@@ -61,7 +70,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setReviewData(customerReviews: List<CustomerReviewsItem?>?) {
         val listReview = ArrayList<String>()
-        for (review in customerReviews!!){
+        for (review in customerReviews!!) {
             listReview.add(
                 """
                     ${review?.review}
@@ -88,7 +97,6 @@ class MainActivity : AppCompatActivity() {
         } else {
             binding.progressbar.visibility = View.GONE
         }
-
     }
 }
 
