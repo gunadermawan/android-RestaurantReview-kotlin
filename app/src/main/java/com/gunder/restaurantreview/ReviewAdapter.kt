@@ -13,9 +13,8 @@ class ReviewAdapter(private val listView: List<String>) :
         val tvItem: TextView = view.findViewById(R.id.tv_item)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReviewAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReviewAdapter.ViewHolder =
         ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_view, parent, false))
-    }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         viewHolder.tvItem.text = listView[position]
