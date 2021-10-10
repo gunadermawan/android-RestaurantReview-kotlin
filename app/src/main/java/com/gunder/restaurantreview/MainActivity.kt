@@ -10,7 +10,6 @@ import com.bumptech.glide.Glide
 import com.gunder.restaurantreview.databinding.ActivityMainBinding
 import retrofit2.Call
 import retrofit2.Response
-import javax.security.auth.callback.Callback
 
 class MainActivity : AppCompatActivity() {
     companion object {
