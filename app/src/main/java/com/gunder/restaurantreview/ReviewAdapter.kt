@@ -20,7 +20,6 @@ class ReviewAdapter(private val listView: List<String>) :
         viewHolder.tvItem.text = listView[position]
     }
 
-    override fun getItemCount(): Int {
+    override fun getItemCount(): Int =
         listView.size
-    }
 }
