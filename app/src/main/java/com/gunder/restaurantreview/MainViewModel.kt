@@ -72,6 +72,7 @@ class MainViewModel : ViewModel() {
                 val responseBody = response.body()
                 if (response.isSuccessful && responseBody != null) {
                     _listReview.value = response.body()?.customerReviews as List<CustomerReviewsItem>?
+                    _snackbarText.value = response.body()?.message
                 } else {
                     Log.e(TAG, "onFailure: ${response.message()}")
                 }
